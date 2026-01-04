@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AI 動画字幕ジェネレーター</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.12.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <main>
+      <h1>AI 動画字幕ジェネレーター</h1>
+      <p>ビデオをアップロードすると、AIが音声を日本語の字幕に書き起こします。</p>
+      
+      <div id="app">
+        <div id="upload-container">
+          <label for="video-upload" class="upload-label">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M14 13.5V8C14 7.44772 13.5523 7 13 7H11C10.4477 7 10 7.44772 10 8V13.5H7.70711C7.12132 13.5 6.82843 14.1716 7.20711 14.549L11.2071 18.549C11.6642 19.0062 12.3358 19.0062 12.7929 18.549L16.7929 14.549C17.1716 14.1716 16.8787 13.5 16.2929 13.5H14ZM6 2C4.34315 2 3 3.34315 3 5V19C3 20.6569 4.34315 22 6 22H18C19.6569 22 21 20.6569 21 19V5C21 3.34315 19.6569 2 18 2H6Z"></path></svg>
+            <span>クリックしてビデオをアップロード</span>
+          </label>
+          <input type="file" id="video-upload" accept="video/*" hidden>
+        </div>
+
+        <div id="video-container" class="hidden">
+          <video id="video-player" controls></video>
+        </div>
+
+        <div id="controls">
+          <div class="button-container" id="generation-controls">
+              <button id="generate-button" disabled>字幕を生成</button>
+              <button id="cancel-button" class="hidden">キャンセル</button>
+          </div>
+          <div class="button-container hidden" id="post-generation-controls">
+              <button id="download-button">字幕ファイル (.vtt) をダウンロード</button>
+              <button id="reset-button">新しいビデオをアップロード</button>
+          </div>
+        </div>
+
+        <p id="status-text"></p>
+      </div>
+    </main>
+    <script type="module" src="index.tsx"></script>
+  </body>
+</html>

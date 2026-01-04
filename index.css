@@ -1,0 +1,175 @@
+:root {
+  --background-color: #121212;
+  --surface-color: #1e1e1e;
+  --primary-color: #bb86fc;
+  --primary-variant-color: #3700b3;
+  --secondary-color: #03dac6;
+  --on-background-color: #e0e0e0;
+  --on-surface-color: #ffffff;
+  --border-color: #333333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--on-background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+main {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
+h1 {
+  color: var(--on-surface-color);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #b0b0b0;
+}
+
+#app {
+  background-color: var(--surface-color);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.upload-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.upload-label:hover {
+  background-color: #2a2a2a;
+  border-color: var(--primary-color);
+}
+
+.upload-label svg {
+  width: 50px;
+  height: 50px;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.upload-label span {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--on-surface-color);
+}
+
+#video-container {
+  margin-bottom: 1.5rem;
+}
+
+#video-player {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+#controls {
+  margin-top: 1.5rem;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    min-height: 48px;
+}
+
+@media (min-width: 600px) {
+    .button-container {
+        flex-direction: row;
+    }
+}
+
+button {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  border: none;
+}
+
+
+button#generate-button, button#download-button {
+  color: #000000;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+button#generate-button:hover:not(:disabled), button#download-button:hover:not(:disabled) {
+  opacity: 0.9;
+  box-shadow: 0 4px 15px rgba(187, 134, 252, 0.4);
+}
+
+button#generate-button:active:not(:disabled), button#download-button:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+button#generate-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button#cancel-button, button#reset-button {
+  color: var(--on-surface-color);
+  background-color: #4a4a4a;
+  border: 1px solid var(--border-color);
+}
+
+button#cancel-button:hover:not(:disabled), button#reset-button:hover:not(:disabled) {
+  background-color: #5f5f5f;
+}
+
+button#cancel-button:active:not(:disabled), button#reset-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+button#cancel-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+#status-text {
+  margin-top: 1.5rem;
+  min-height: 1.5rem; /* Reserve space */
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+
+.hidden {
+  display: none;
+}

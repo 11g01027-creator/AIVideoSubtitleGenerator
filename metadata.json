@@ -1,0 +1,6 @@
+{
+  "name": "Copy of AI 動画字幕ジェネレーター",
+  "description": "アップロードされた動画の音声を認識し、日本語の字幕を生成するアプリです。",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
